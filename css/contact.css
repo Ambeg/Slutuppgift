@@ -1,0 +1,53 @@
+/* ----- Stil för kontaktformuläret ----- */
+
+#contact {
+	display: inline-block;
+	margin: 0;
+	padding: 0.8em;
+	background-color: #b3daa9;
+	border: 1px solid #226a1c;
+    border-radius: 12px;
+}
+
+#contact div {
+	display: grid;
+	grid-template-columns: min-content auto;
+	gap: 0.9em;
+	white-space: nowrap;
+}
+#contact input[type=text] {
+	width: 45ch;
+}
+#contact textarea {
+	width: 48ch;
+	height: 5em;
+}
+#contact input[type=submit] {
+	display: block;
+	margin-left: auto;
+	margin-top: 2em;
+}
+/* ----- Media query ----- */
+
+@media screen and (max-width:950px) {
+	#contact div {
+		grid-template-columns: auto;
+	}
+	#contact input[type=text], #contact textarea {
+		max-width: 90vw;
+	}
+}
+
+@media screen and (max-width:600px) {
+       
+    #contact {
+        margin-right: 10px;
+        max-width: 90vw;
+    }
+	#contact div {
+		grid-template-columns: auto;
+	}
+	#contact input[type=text], #contact textarea {
+        max-width: 100%;
+	}
+}

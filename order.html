@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Snowburst+One&display=swap');
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruktbutik</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/order.css">
+</head>
+
+<body>
+    <nav>
+        <label for="menucheckbox" id="menuicon"></label>
+        <input type="checkbox" id="menucheckbox">
+        <ul id="globalnav">
+            <li><a href="index.html" class="thisPage">Hem</a></li>
+            <li><a href="frukter.html">Frukter</a>
+                <ul>
+                    <li><a href="nyhet.html">Nyhet</a></li>
+                    <li><a href="närodlat.html">närodlade frukter</a></li>
+                    <li><a href="exotisk.html">Exotiska frukter</a></li>
+                </ul>
+            </li>
+            <li><a href="omoss.html">Om oss</a></li>
+            <li><a href="kontakt.html">Kontakt</a> </li>
+        </ul>
+    </nav>
+    <header id="frontPageHeader">
+        <h1>Fruktbutik</h1>
+    </header>
+    <div id="search">
+        <form>
+            <input type="search" placeholder="Sök frukt....">
+            <input type="button" value="Sök">
+        </form>
+
+    </div>
+    <main id="startPage">
+        <h2>Beställning för leverans</h2>
+        <form id="order" name="order" method="post">
+            <section id="product">
+                <p>Din varukorg:</p>
+                <ul>
+                    <li>Frukten abc: 85kr</li>
+                    <li>Leveransavgift: 55kr</li>
+                    <li>Summa: 140kr</li>
+                </ul>
+            </section>
+            <p>Om du ångrar ditt val kan du gå tillbaka till sortimentssidan och välja en annan vara.</p>
+            <p>Ange dina uppgifter nedan. Obligatoriska fält är markerade med *.</p>
+
+            <fieldset id="amount">
+                <legend>Produkt</legend>
+                <label for="name">*Välj antal kg: </label>
+                <select name="Kg">
+                    <option selected value="1">0,5</option>
+                    <option value="2">1</option>
+                    <option value="3">2</option>
+                    <option value="4">3</option>
+                    <option value="5">4</option>
+                </select>
+            </fieldset>
+
+            <fieldset id="contact">
+                <legend>Kontaktuppgifter</legend>
+                <div class="columns">
+                    <label for="name">*Förnamn, efternamn: </label>
+                    <input type="text" name="name" id="name" required>
+
+                    <label for="email">*E-post: </label>
+                    <input type="text" name="email" id="email" required>
+
+                    <label for="number">Telefon: </label>
+                    <input type="text" name="number" id="number" required>
+
+                    <label for="adress">*Gatuadress: </label>
+                    <input type="text" name="adress" id="adress" required>
+
+                    <label for="zipcode">*Postnummer: </label>
+                    <input type="text" name="zipcode" id="zipcode" required>
+
+                </div>
+
+            </fieldset>
+
+            <fieldset id="payment">
+                <legend>Betalningssätt</legend>
+                *Betala med:
+                <label>
+                    <input type="radio" name="payMethod" id="payMethod" checked="checked">Kreditkort
+                </label>
+                <label>
+                    <input type="radio" name="payMethod" id="payMethod">Faktura
+                </label>
+                <label>
+                    <input type="radio" name="payMethod" id="payMethod">Swish
+                </label>
+            </fieldset>
+            <input type="submit" value="Betala" id="submit">
+        </form>
+
+    </main>
+    <aside>
+        <h3>Öppettider:</h3>
+        <ul>
+            <li>Mån-Tis: kl. 09-20</li>
+            <li>Lör: kl. 10-19 </li>
+            <li>Sön: kl. 10-18</li>
+        </ul>
+        <h4>Leveranstider</h4>
+        <ul>
+            <li>Beställ innan kl. 14.00 för leverans nästa vardag.</li>
+            <li>Leverans inom Kalmar och Växjö: 1-2 arbetsdagar.</li>
+            <li>Övriga Sverige: 2-4 arbetsdagar.</li>
+        </ul>
+        <a href="rapport.html">Rapport</a>
+    </aside>
+    <footer>
+        <p>Sidfot</p>
+    </footer>
+</body>
+
+
+</html>

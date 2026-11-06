@@ -1,0 +1,317 @@
+@charset "UTF-8";
+
+/*---- Grundstil för webbsidan -----*/
+
+html {
+    font-size: 16px;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+html,
+body,
+nav,
+header,
+main,
+aside,
+footer,
+section,
+div {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ----- Layout ----- */
+
+body {
+    background-color: hsl(84, 22%, 78%);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: grid;
+    grid-template-columns: auto minmax(auto, 700px) 250px;
+    grid-template-rows: min-content auto min-content;
+    grid-template-areas:
+        "nav   nav    nav"
+        "header header header"
+        ".      .    search"
+        "main  main    aside"
+        "footer footer footer";
+}
+
+header {
+    grid-area: header;
+    padding: 60px;
+    font-weight: bold;
+    font-family: Snowburst One, cursive;
+}
+
+#search {
+    grid-area: search;
+    padding: 10px;
+    text-align: right;
+}
+
+#search input[type=search] {
+    background-color: #e8ece7;
+    border-color: black;
+}
+
+#search input[type=button] {
+    background-color: #FFD567;
+}
+
+header h1,
+header h2 {
+    max-width: 1000px;
+    margin: 0 auto;
+    color: #ac3333;
+    font-size: 60px;
+}
+
+#frontPageHeader {
+    background-image: url("/img/fruktkorg.jpg");
+    background-size: cover;
+    background-position: top;
+    height: 250px;
+}
+
+
+/* ------ Stil för navigering ----- */
+
+nav {
+    grid-area: nav;
+    background-color: #ac3333;
+    font-size: 1.1em;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 0.5em;
+    margin: 0;
+    padding: 10px;
+    justify-content: center;
+    flex-direction: row;
+    transition: all .1s;
+}
+
+nav ul ul {
+
+    background-color: #c15151;
+    box-shadow: 3px 3px 16px #175903;
+    flex-direction: column;
+    position: absolute;
+    visibility: hidden;
+
+}
+
+nav ul li:hover ul {
+    visibility: visible;
+}
+
+nav a {
+    background-color: #8e2626;
+    color: #e39898;
+    text-decoration: solid;
+    display: block;
+    padding: 0.7em;
+}
+
+nav a:hover {
+    background-color: #d8a09a;
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+nav ul ul a {
+    background-color: unset;
+    color: #ffffff;
+    ;
+}
+
+nav a.thisPage {
+    background-color: #5c0101;
+}
+
+#menucheckbox {
+    visibility: hidden;
+}
+
+#localnav {
+    background-color: #c48181;
+}
+
+
+/* ------ Stil för sidans huvudinnehåll ----- */
+
+main {
+    grid-area: main;
+    padding-left: 150px;
+
+}
+
+main h2,
+p {
+    color: #064620;
+}
+
+
+/*------ Stil för sidorutan -------*/
+
+aside {
+    grid-area: aside;
+    background-color: #889f7b;
+    border: 2px solid #587248;
+    padding: 20px;
+    border-radius: 12px;
+    margin-left: 20px;
+    margin-right: 10px;
+    max-width: auto;
+}
+
+aside h3,
+aside h4 {
+    margin-top: 0;
+    color: #064620;
+    border-bottom: 2px solid #597f40;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+aside ul {
+    padding-left: 10px;
+}
+
+aside li {
+    padding-bottom: 5px;
+    color: #0b5218;
+}
+
+
+
+/* ------ Stil för sidfoten ----- */
+
+footer {
+    grid-area: footer;
+    background-color: #597f40;
+    color: #cccccc;
+    padding: 30px;
+    text-align: left;
+}
+
+/* ----- Media query ----- */
+@media screen and (max-width: 950px) {
+    #frontPageHeader {
+        background-image: url("/img/fruktkorg.jpg");
+        background-size: cover;
+        background-position: center;
+    }
+
+    header h1 {
+        font-size: 60px;
+        width: 350px;
+        margin: auto;
+        position: center;
+        margin-top: 50px;
+        color: #f1eeee;
+        background-color: #ac3333;
+    }
+
+}
+
+
+@media screen and (max-width: 600px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    body {
+        grid-template-columns: auto;
+        grid-template-rows: min-content min-content auto min-content;
+        grid-template-areas:
+            "nav"
+            "search"
+            "header"
+            "main"
+            "aside"
+            "footer";
+    }
+
+    #frontPageHeader {
+        background-image: url("/img/fruktkorg.jpg");
+        background-position: top;
+        height: 50%
+    }
+
+    header h1 {
+        font-size: 30px;
+        width: 180px;
+        margin-top: 0;
+        color: #f1eeee;
+        background-color: #ac3333;
+    }
+
+    #search {
+        text-align: left;
+    }
+
+    main {
+        grid-area: main;
+        padding-left: 20px;
+        padding-right: 40px;
+    }
+
+    aside {
+        margin-right: 10px;
+        max-width: 90vw;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 94%;
+        position: absolute;
+        background-color: unset;
+        justify-content: flex-end;
+    }
+
+    nav ul ul {
+        visibility: visible;
+        position: static;
+    }
+
+    #localnav {
+        visibility: hidden;
+    }
+
+
+    #menuicon {
+        display: inline-block;
+        background-image: url(/img/menyicon.svg);
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+
+    }
+
+    #menucheckbox~ul {
+        display: none;
+    }
+
+    #menucheckbox:checked~ul {
+        display: flex;
+    }
+
+    #menucheckbox {
+        display: none;
+    }
+}
